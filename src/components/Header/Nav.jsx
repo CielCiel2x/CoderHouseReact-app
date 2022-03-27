@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 
@@ -5,6 +6,8 @@ import React from "react";
 export default function Nav() {
     return(
         <>
+        <Typography
+        color="primary">
         <nav className="light-color">
             <ul >
                 <li><a href="#!">Home</a></li>
@@ -14,6 +17,7 @@ export default function Nav() {
                 <li><a href="#!">Contact</a></li>
             </ul>
         </nav>
+        </Typography>
         
         
         </>

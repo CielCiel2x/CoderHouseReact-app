@@ -14,7 +14,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #032639;
 }
 
 nav ul li {
@@ -34,14 +33,6 @@ nav ul li a {
 
 .header__logo {
     width: 75px;
-}
-
-.dark-color {
- color: #032639;
-}
-
-.light-color {
-    color: #0bb89b;
 }
 
 .session__container {

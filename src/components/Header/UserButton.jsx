@@ -13,7 +13,7 @@ export default function UserButton() {
             <Button
             startIcon={<PersonIcon/>}
             variant="contained"
-            color="inherit"
+            color="primary"
             size="large">
                 Login
             </Button>
