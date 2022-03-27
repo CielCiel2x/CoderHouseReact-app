@@ -1,0 +1,1 @@
+React app created for Coderhouse's React course.
