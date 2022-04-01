@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ItemCounter from './ItemCounter'
 
 
-export default function ItemListContainer(item) {
+export default function ItemListContainer() {
+
+    const StockAmount = 5;
+const [amountProduct, SetAmountToBuy] = useState(1);
+
+    function onAdd(buyingAmount) {
+        console.log( `estas comprando ${buyingAmount}`);
+    }
+   
+
+
 
     return(
         <>
-        this is an item list container for {item.nombre}.
+
+        <ItemCounter onAdd={onAdd} amountProduct={amountProduct} SetAmountToBuy={SetAmountToBuy} StockAmount={StockAmount}/>
+
         </>
     );
-
 }

@@ -9,7 +9,7 @@ export default function UserButton() {
 
     return(
         <>
-        <div class="cartButton">
+        <div className="cartButton">
             <Button
             startIcon={<PersonIcon/>}
             variant="contained"

@@ -1,7 +1,7 @@
 import { createTheme} from '@mui/material/styles';
 
 
-export const dashboardTheme = createTheme({
+export const MainTheme = createTheme({
 
     palette: {
         type: 'dark',
