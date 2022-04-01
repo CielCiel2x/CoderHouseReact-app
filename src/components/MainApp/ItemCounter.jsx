@@ -72,6 +72,7 @@ export default function AddingAmount({amountProduct, SetAmountToBuy, onAdd, Stoc
             variant="contained"
             color="primary"
             size="large"
+            disabled={amountProduct > 0 ? false : true}
             onClick={()=> onAdd(amountProduct)}>
                 Add to cart
             </Button>
