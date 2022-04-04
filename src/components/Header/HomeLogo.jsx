@@ -4,7 +4,7 @@ import React from "react";
 export default function HomeLogo() {
   return (
     <>
-      <a href="#!">
+      <a href="#!" >
         <img src={Logo} alt="" className="header__logo" />
       </a>
     </>

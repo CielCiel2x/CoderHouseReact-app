@@ -1,14 +1,12 @@
 import React from "react";
-
+import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
-import './App.css';
 import { MainTheme } from './components/MainTheme';
+
+
+
 import Header from "./components/Header/Header"
-
-import './App.css';
-
 import ItemListContainer from "./components/MainApp/ItemListContainer";
-
 
 
 export default function App() {
@@ -20,6 +18,8 @@ export default function App() {
 
         <Header/>
         <ItemListContainer/>
+
+
 
       </ThemeProvider>
     </>

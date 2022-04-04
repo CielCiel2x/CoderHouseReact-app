@@ -1,13 +1,28 @@
-import React from "react";
+import React,{useState}  from "react";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-export default function AddingAmount({amountProduct, SetAmountToBuy, onAdd, StockAmount}) {
-    StockAmount = 5;
+
+export default function ItemCounter({stock, name}) {
+
+const [amountProduct, SetAmountToBuy] = useState(0);
+
+function addUnit() {
+  SetAmountToBuy(amountProduct + 1)
+}
+
+function minusUnit() {
+  SetAmountToBuy(amountProduct - 1)
+}
+
+function onAdd(buyingAmount) {
+  alert( `you bought ${buyingAmount} of ${name}`);
+}
 
   return (
     <>
@@ -15,67 +30,70 @@ export default function AddingAmount({amountProduct, SetAmountToBuy, onAdd, Stoc
         sx={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
-          width: 350,
-          border: 1,
-          borderColor: "grey.500",
-          borderRadius: 1.5,
-          margin: 5
-            }}
-      >
-
-
-
-
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
 
         <Box
           sx={{
-            flexGrow: 1,
             display: "flex",
-            justifyContent: "center"
-          }}>
-<IconButton aria-label="RemoveIcon" size="small" color="primary" disabled={amountProduct <=0 ? true : false} onClick={() => SetAmountToBuy(--amountProduct)}>
-  <RemoveIcon fontSize="inherit" />
-</IconButton>
-
-        </Box>
-
-        <Box
-          sx={{
-            flexGrow: 3,
-          }}
+            flexDirection: "row",
+            justifyContent: "space-between",
+            minWidth: 125,
+            border: 1,
+            borderColor: "grey.300",
+            marginRight: 2,
+            marginBottom: 2,
+            marginTop: 2,
+            boxShadow: 5,
+              }}
         >
-          <Typography align="center">
-              {amountProduct}
-          </Typography>
-        </Box>
-
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "center"
+            }}>
+        <IconButton aria-label="RemoveIcon" size="small" color="primary" disabled={amountProduct <=0 ? true : false} onClick={minusUnit}>
+          <RemoveIcon fontSize="inherit" />
+        </IconButton>
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 2,
         
-
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "center"
-          }}
-        >
-<IconButton aria-label="AddIcon" size="small" color="primary" disabled={amountProduct >= StockAmount ? true : false} onClick={() => SetAmountToBuy(++amountProduct)}>
-  <AddIcon fontSize="inherit" />
-</IconButton>
+            }}
+          >
+            <Typography align="center">
+                {amountProduct}
+            </Typography>
+          </Box>
+        
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "center"
+            }}
+          >
+        <IconButton aria-label="AddIcon" size="small" color="primary" disabled={amountProduct >= stock ? true : false} onClick={addUnit}>
+          <AddIcon fontSize="inherit"/>
+        </IconButton>
+          </Box>
         </Box>
 
+        <Box>
+        <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              width="100%"
+              disabled={amountProduct > 0 ? false : true}
+              onClick={()=> onAdd(amountProduct)}>
+                    <AddShoppingCartIcon fontSize="medium" />
+              </Button>
+        </Box>
 
-      </Box>
-
-      <Box>
-      <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            disabled={amountProduct > 0 ? false : true}
-            onClick={()=> onAdd(amountProduct)}>
-                Add to cart
-            </Button>
       </Box>
     </>
   );

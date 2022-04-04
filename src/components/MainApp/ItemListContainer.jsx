@@ -1,23 +1,39 @@
-import React, { useState } from 'react';
-import ItemCounter from './ItemCounter'
+import React, { useEffect, useState } from 'react';
+import Promises from './Promises';
+import Products from '../Products';
+import ItemList from './ItemList';
+import { Box } from '@mui/material';
 
 
 export default function ItemListContainer() {
 
-    const StockAmount = 5;
-const [amountProduct, SetAmountToBuy] = useState(1);
+    const [ItemProduct, setItemProduct] = useState([]);
 
-    function onAdd(buyingAmount) {
-        console.log( `estas comprando ${buyingAmount}`);
-    }
-   
+
+useEffect(() => {
+    Promises(3000, Products)
+    .then(result => setItemProduct(result))
+    .catch('error');
+
+}, [ItemProduct])
+
 
 
 
     return(
         <>
+        <Box sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      flexWrap: "wrap",
+                      padding: 8,
+                      margin: 3
+        }}>
+        <ItemList ProductsFullList={ItemProduct}/>
 
-        <ItemCounter onAdd={onAdd} amountProduct={amountProduct} SetAmountToBuy={SetAmountToBuy} StockAmount={StockAmount}/>
+        </Box>
+
 
         </>
     );
