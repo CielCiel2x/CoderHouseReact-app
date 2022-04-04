@@ -1,7 +1,7 @@
 import React from 'react'
 import Items from './Items'
 
-export default function ItemList({ProductsFullList}) {
+export default function ItemList({ProductsFullList, cartAdd}) {
 
   return (
     ProductsFullList.map(product => (
@@ -10,7 +10,8 @@ export default function ItemList({ProductsFullList}) {
         name={product.name}
         price={product.price}
         productImage={product.productImage}
-        stock={product.stock}/>
+        stock={product.stock}
+        cartAdd={cartAdd}/>
     ))
 
   )

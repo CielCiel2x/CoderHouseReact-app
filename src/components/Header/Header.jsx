@@ -15,7 +15,7 @@ import HomeLogo from './HomeLogo'
 
 const pages = ['Home', 'Catalogue', 'Custom', 'Gallery', 'Contact'];
 
-export default function Header() {
+export default function Header({cartNumber}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -81,7 +81,7 @@ export default function Header() {
             ))}
           </Box>
 
-          <SessionBuy/>
+          <SessionBuy cartNumber={cartNumber}/>
         </Toolbar>
       </Container>
     </AppBar>

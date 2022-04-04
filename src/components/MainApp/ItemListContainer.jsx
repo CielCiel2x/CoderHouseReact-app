@@ -5,7 +5,7 @@ import ItemList from './ItemList';
 import { Box } from '@mui/material';
 
 
-export default function ItemListContainer() {
+export default function ItemListContainer({cartAdd}) {
 
     const [ItemProduct, setItemProduct] = useState([]);
 
@@ -30,7 +30,7 @@ useEffect(() => {
                       padding: 8,
                       margin: 3
         }}>
-        <ItemList ProductsFullList={ItemProduct}/>
+        <ItemList ProductsFullList={ItemProduct} cartAdd={cartAdd}/>
 
         </Box>
 

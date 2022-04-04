@@ -8,12 +8,12 @@ import { Button } from "@mui/material";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-export default function ItemCounter({stock, name}) {
+export default function ItemCounter({stock, name, cartAdd}) {
 
 const [amountProduct, SetAmountToBuy] = useState(0);
 
 function addUnit() {
-  SetAmountToBuy(amountProduct + 1)
+  SetAmountToBuy(amountProduct + 1);
 }
 
 function minusUnit() {
@@ -21,6 +21,7 @@ function minusUnit() {
 }
 
 function onAdd(buyingAmount) {
+  cartAdd(buyingAmount);
   alert( `you bought ${buyingAmount} of ${name}`);
 }
 

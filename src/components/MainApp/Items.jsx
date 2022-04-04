@@ -9,7 +9,7 @@ import CardMedia from '@mui/material/CardMedia';
 import ItemCounter from './ItemCounter';
 import { Box } from '@mui/material';
 
-export default function Items({sku, name, price, productImage, stock}) {
+export default function Items({sku, name, price, productImage, stock, cartAdd}) {
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Items({sku, name, price, productImage, stock}) {
         image={productImage}
       />
       <Box>
-      <ItemCounter stock={stock} name={name}/>
+      <ItemCounter stock={stock} name={name} cartAdd={cartAdd}/>
       </Box>
 
 
