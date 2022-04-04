@@ -2,6 +2,7 @@
   "name": "coderhouse-react",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://CielCiel2x.github.io/CoderHouseReact-app",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -11,6 +12,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^3.2.3",
     "install": "^0.13.0",
     "npm": "^8.5.5",
     "react": "^17.0.2",
@@ -20,6 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
