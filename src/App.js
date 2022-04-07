@@ -6,8 +6,11 @@ import { MainTheme } from './components/MainTheme';
 
 
 import Header from "./components/Header/Header"
-import ItemListContainer from "./components/MainApp/ItemListContainer";
+import ItemListContainer from "./components/Item/ItemListContainer";
 import { CssBaseline } from "@mui/material";
+import ItemDetailContainer from "./components/Item/ItemDetail/ItemDetailContainer";
+
+
 
 
 export default function App() {
@@ -22,11 +25,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={MainTheme}>
-      <CssBaseline>
+        <CssBaseline>
 
-        <Header cartNumber={cartNumber}/>
-        <ItemListContainer cartAdd={cartAdd}/>
-        
+          <Header cartNumber={cartNumber} />
+          <ItemListContainer />
+
+          <ItemDetailContainer cartAdd={cartAdd} />
+
         </CssBaseline>
       </ThemeProvider>
 

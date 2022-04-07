@@ -2,16 +2,16 @@ let isOk = true;
 
 const Promises = (time, task) => {
 
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
 
         setTimeout(() => {
 
-            if(isOk) {
+            if (isOk) {
                 resolve(task);
             } else {
                 reject('Error');
             }
-            
+
         }, time);
     })
 };

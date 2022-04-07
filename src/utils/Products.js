@@ -41,11 +41,27 @@ const Products = [
 
     {
         sku: 6,
-        name: 'Star Guardian Pix | League of Legends plushie',
+        name: 'Star Guardian Pix | League of Legends',
         price: 27.50,
         productImage: 'https://ae01.alicdn.com/kf/HTB1GJelagLD8KJjSszeq6yGRpXai.jpg?size=73711&height=390&width=600&hash=9223e9a75784abd1676860fddd6c3500',
         stock: 1
     }
 ]
 
+const product = {
+    sku: 1,
+    name: "Kindred | League of Legends plushie",
+    price: 35,
+    productImage: "https://m.media-amazon.com/images/I/61yjhxVymPL._AC_SL1500_.jpg",
+    stock: 2,
+}
+
 export default Products;
+
+export const fetchProduct = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(product);
+        }, 2000);
+    });
+};
