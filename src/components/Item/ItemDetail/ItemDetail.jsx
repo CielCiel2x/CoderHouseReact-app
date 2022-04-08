@@ -9,8 +9,8 @@ import ItemCounter from "../ItemCounter";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import FastForwardIcon from "@mui/icons-material/FastForward";
-import StarRateIcon from "@mui/icons-material/StarRate";
-import StarPurple500Icon from "@mui/icons-material/StarPurple500";
+
+import ItemRating from "./ItemRating";
 
 export default function ItemDetail({ productDetails, cartAdd }) {
   return (
@@ -70,13 +70,11 @@ export default function ItemDetail({ productDetails, cartAdd }) {
             </Box>
             <Box sx={{ my: 2 }}>
               <Box>
-                <StarRateIcon color="primary" />
-                <StarRateIcon color="primary" />
-                <StarRateIcon color="primary" />
-                <StarRateIcon color="primary" />
-                <StarPurple500Icon color="primary" />
+                <ItemRating ItemRatings={productDetails.rating} />
               </Box>
-              <Typography variant="caption">4 out of 5 stars</Typography>
+              <Typography variant="caption">
+                {`${productDetails.rating}`} out of 5 stars
+              </Typography>
             </Box>
           </CardContent>
           <ItemCounter stock={productDetails.stock} cartAdd={cartAdd} />

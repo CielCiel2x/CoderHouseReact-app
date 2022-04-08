@@ -54,6 +54,7 @@ const product = {
     price: 35,
     productImage: "https://m.media-amazon.com/images/I/61yjhxVymPL._AC_SL1500_.jpg",
     stock: 2,
+    rating: 4,
 }
 
 export default Products;
