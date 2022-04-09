@@ -6,7 +6,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 
-export default function ItemCounter({ stock, name, cartAdd }) {
+export default function ItemCounter({ stock, cartAdd }) {
   const [amountProduct, SetAmountToBuy] = useState(0);
 
   function addUnit() {
@@ -19,16 +19,17 @@ export default function ItemCounter({ stock, name, cartAdd }) {
 
   function onAdd(buyingAmount) {
     cartAdd(buyingAmount);
-    alert(`you bought ${buyingAmount} of ${name}`);
   }
 
   return (
     <>
       <Box
         sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           alignItems: "center",
           minWidth: "80",
-          maxWidth: 250,
         }}
       >
         <Box
@@ -38,7 +39,6 @@ export default function ItemCounter({ stock, name, cartAdd }) {
             justifyContent: "space-between",
             border: 1,
             borderColor: "grey.300",
-            marginRight: 2,
             marginBottom: 2,
 
             boxShadow: 5,
@@ -89,7 +89,7 @@ export default function ItemCounter({ stock, name, cartAdd }) {
           </Box>
         </Box>
 
-        <Box>
+        <Box sx={{ width: "100%" }}>
           <Button
             variant="contained"
             color="secondary"

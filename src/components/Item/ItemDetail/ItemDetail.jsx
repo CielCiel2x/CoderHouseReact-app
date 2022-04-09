@@ -13,18 +13,15 @@ import FastForwardIcon from "@mui/icons-material/FastForward";
 import ItemRating from "./ItemRating";
 
 export default function ItemDetail({ productDetails, cartAdd }) {
-
-
   return (
     <>
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "center",
-          gap: 7,
+          gap: { xs: "none", md: 7, xl: 15 },
           alignItems: "center",
-          margin: 5,
         }}
       >
         {/* G A L E R I A */}
@@ -35,8 +32,17 @@ export default function ItemDetail({ productDetails, cartAdd }) {
             alt="#"
           />
         </Box>
+
         {/* D A T O S   D E   P R O D U C T O */}
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            borderLeft: { xs: "unset", md: 2.3 },
+            borderColor: { xs: "none", md: "#c9c9c9" },
+            paddingLeft: { xs: "none", md: 5, xl: 15 },
+          }}
+        >
           <CardHeader
             title={productDetails.name}
             subheader={`stock: ${productDetails.stock}`}
@@ -48,7 +54,13 @@ export default function ItemDetail({ productDetails, cartAdd }) {
             <Typography sx={{ mb: 1.5 }} color="text.secondary" variant="body2">
               in 12 x {(productDetails.price / 12) * 1.5}
             </Typography>
-            <Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1.3,
+              }}
+            >
               <Box
                 sx={{
                   display: "flex",
@@ -78,8 +90,9 @@ export default function ItemDetail({ productDetails, cartAdd }) {
                 {`${productDetails.rating}`} out of 5 stars
               </Typography>
             </Box>
+              <ItemCounter stock={productDetails.stock} cartAdd={cartAdd} sx={{width: "100%"}}/>
           </CardContent>
-          <ItemCounter stock={productDetails.stock} cartAdd={cartAdd} />
+
         </Box>
       </Box>
     </>

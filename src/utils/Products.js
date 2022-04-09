@@ -3,7 +3,7 @@ const Products = [
         sku: 1,
         name: "Kindred | plushie",
         price: 35,
-        productImage: "https://m.media-amazon.com/images/I/61yjhxVymPL._AC_SL1500_.jpg",
+        productImage: "https://static.wixstatic.com/media/21cc1a_4f07b4b4a3404b0b970e9546cb5ac949~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
         stock: 2,
         rating: 4,
         category: "plushies",
@@ -94,11 +94,12 @@ const Products = [
 
 const product = {
     sku: 1,
-    name: "Kindred | League of Legends plushie",
+    name: "Kindred | plushie",
     price: 35,
-    productImage: "https://m.media-amazon.com/images/I/61yjhxVymPL._AC_SL1500_.jpg",
+    productImage: "https://static.wixstatic.com/media/21cc1a_4f07b4b4a3404b0b970e9546cb5ac949~mv2.png/v1/fit/w_500,h_500,q_90/file.png",
     stock: 2,
     rating: 4,
+    category: "plushies",
 }
 
 export default Products;

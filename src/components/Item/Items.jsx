@@ -11,8 +11,7 @@ export default function Items({ sku, name, price, productImage, stock }) {
     <>
       <Card
         sx={{
-          minWidth: 300,
-          maxWidth: 350,
+          width: 350,
           boxShadow: 12,
           margin: 1,
           display: "flex",

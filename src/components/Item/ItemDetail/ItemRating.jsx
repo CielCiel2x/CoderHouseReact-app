@@ -6,7 +6,5 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 
 export default function ItemRating({ItemRatings}) {
 
-    console.log(ItemRatings);
-
-    return [...Array(ItemRatings)].map((i) => <StarRateIcon color="primary" key={i}/>);
+    return [...Array(ItemRatings)].map((e, i) => <StarRateIcon color="primary" key={i}/>);
   }
