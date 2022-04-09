@@ -41,6 +41,7 @@ export default function ItemDetail({ productDetails, cartAdd }) {
             borderLeft: { xs: "unset", md: 2.3 },
             borderColor: { xs: "none", md: "#c9c9c9" },
             paddingLeft: { xs: "none", md: 5, xl: 15 },
+            width: 500
           }}
         >
           <CardHeader

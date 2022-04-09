@@ -104,10 +104,4 @@ const product = {
 
 export default Products;
 
-export const fetchProduct = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(product);
-        }, 2000);
-    });
-};
+export {product}

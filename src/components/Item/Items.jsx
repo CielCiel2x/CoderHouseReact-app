@@ -4,11 +4,13 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 
-import ViewDetails from "./ViewDetails";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Items({ sku, name, price, productImage, stock }) {
   return (
     <>
+
       <Card
         sx={{
           width: 350,
@@ -26,7 +28,17 @@ export default function Items({ sku, name, price, productImage, stock }) {
           subheader={`price: $${price} | stock: ${stock}`}
         />
         <CardMedia component="img" height="300" image={productImage} />
-        <ViewDetails />
+
+        <Button
+      variant="outlined"
+      color="secondary"
+      sx={{ my: 4, width: "80%", mx: "auto" }}
+    >
+              <Link to={`/item/${sku}`}>
+      View Details
+      </Link>
+    </Button>
+
       </Card>
     </>
   );

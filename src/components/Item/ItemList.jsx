@@ -4,6 +4,7 @@ import Items from "./Items";
 export default function ItemList({ ItemProduct, cartAdd }) {
   return ItemProduct.map((product) => (
     <Items
+      sku={product.sku}
       key={product.sku}
       name={product.name}
       price={product.price}

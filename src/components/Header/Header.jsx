@@ -12,8 +12,9 @@ import MenuItem from '@mui/material/MenuItem';
 
 import SessionBuy from "./SessionBuy";
 import HomeLogo from './HomeLogo'
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Clothing', 'toys', 'Contact'];
+const pages = ['catalog', 'plushies', 'figures', 'clothing'];
 
 export default function Header({cartNumber}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -31,7 +32,6 @@ export default function Header({cartNumber}) {
       <Container maxWidth="xl" sx={{p: 2}}>
         <Toolbar disableGutters>
         <HomeLogo/>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -63,7 +63,7 @@ export default function Header({cartNumber}) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={`/catalog/${page}`}><Typography textAlign="center">{page}</Typography></Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -76,7 +76,9 @@ export default function Header({cartNumber}) {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'primary', display: 'block', mx: 3 }}
               >
+                <Link to={`/catalog/${page}`}>
                 {page}
+                </Link>
               </Button>
             ))}
           </Box>
