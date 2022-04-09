@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CoderHouseReact-app/static/css/main.77b91f8e.css",
-    "main.js": "/CoderHouseReact-app/static/js/main.6112fed6.js",
+    "main.css": "/CoderHouseReact-app/static/css/main.f2b0adea.css",
+    "main.js": "/CoderHouseReact-app/static/js/main.82edb467.js",
     "static/js/787.c285b863.chunk.js": "/CoderHouseReact-app/static/js/787.c285b863.chunk.js",
     "static/media/logo.png": "/CoderHouseReact-app/static/media/logo.787619e145016bc90e42.png",
     "index.html": "/CoderHouseReact-app/index.html",
-    "main.77b91f8e.css.map": "/CoderHouseReact-app/static/css/main.77b91f8e.css.map",
-    "main.6112fed6.js.map": "/CoderHouseReact-app/static/js/main.6112fed6.js.map",
+    "main.f2b0adea.css.map": "/CoderHouseReact-app/static/css/main.f2b0adea.css.map",
+    "main.82edb467.js.map": "/CoderHouseReact-app/static/js/main.82edb467.js.map",
     "787.c285b863.chunk.js.map": "/CoderHouseReact-app/static/js/787.c285b863.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77b91f8e.css",
-    "static/js/main.6112fed6.js"
+    "static/css/main.f2b0adea.css",
+    "static/js/main.82edb467.js"
   ]
 }
