@@ -22,10 +22,11 @@ export default function Items({ sku, name, price, productImage, stock }) {
         key={sku}
       >
         <CardHeader
+          sx={{flexGrow: 1}}
           title={name}
           subheader={`price: $${price} | stock: ${stock}`}
         />
-        <CardMedia component="img" height="194" image={productImage} />
+        <CardMedia component="img" height="300" image={productImage} />
         <ViewDetails />
       </Card>
     </>

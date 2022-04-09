@@ -3,13 +3,19 @@ import Promises from "./Promises";
 import Products from "../../utils/Products";
 import ItemList from "./ItemList";
 import { Box } from "@mui/material";
+import MyLoader from "../../utils/MyLoader";
+
 
 export default function ItemListContainer({ cartAdd }) {
   const [ItemProduct, setItemProduct] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promises(3000, Products)
-      .then((result) => setItemProduct(result))
+      .then((result) => {
+        setItemProduct(result);
+        setLoading(false)
+      })
       .catch("error");
   }, [ItemProduct]);
 
@@ -25,7 +31,9 @@ export default function ItemListContainer({ cartAdd }) {
           margin: 3,
         }}
       >
-        <ItemList ItemProduct={ItemProduct} cartAdd={cartAdd} />
+        {
+        loading ? <MyLoader loading={loading}/> : <ItemList ItemProduct={ItemProduct} cartAdd={cartAdd} />
+      }
       </Box>
     </>
   );
