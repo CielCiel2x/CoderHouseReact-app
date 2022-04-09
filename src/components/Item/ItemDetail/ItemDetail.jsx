@@ -13,6 +13,8 @@ import FastForwardIcon from "@mui/icons-material/FastForward";
 import ItemRating from "./ItemRating";
 
 export default function ItemDetail({ productDetails, cartAdd }) {
+
+
   return (
     <>
       <Box
@@ -28,7 +30,7 @@ export default function ItemDetail({ productDetails, cartAdd }) {
         {/* G A L E R I A */}
         <Box>
           <img
-            src="https://m.media-amazon.com/images/I/61yjhxVymPL._AC_SL1500_.jpg"
+            src={productDetails.productImage}
             className="product__image"
             alt="#"
           />
