@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import SessionBuy from "./SessionBuy";
 import HomeLogo from './HomeLogo'
 
-const pages = ['Home', 'Catalogue', 'Custom', 'Gallery', 'Contact'];
+const pages = ['Home', 'Clothing', 'toys', 'Contact'];
 
 export default function Header({cartNumber}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -74,7 +74,7 @@ export default function Header({cartNumber}) {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'primary', display: 'block' }}
+                sx={{ my: 2, color: 'primary', display: 'block', mx: 3 }}
               >
                 {page}
               </Button>
