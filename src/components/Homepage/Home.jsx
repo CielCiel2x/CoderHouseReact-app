@@ -15,7 +15,7 @@ function Home() {
     setLoading(true);
     Promises(3000, Products)
       .then((result) => {
-        setItemProduct(result);
+        setItemProduct(result.filter(obj => obj.rating === 5));
         setLoading(false);
       })
       .catch("error");
