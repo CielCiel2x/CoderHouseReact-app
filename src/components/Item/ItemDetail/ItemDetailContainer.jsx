@@ -13,6 +13,7 @@ function ItemDetailContainer({ cartAdd }) {
   const {itemId} = useParams()
 
   useEffect(() => {
+    setLoading(true);
     Promises(3000, Products[itemId - 1])
       .then((result) => {
         setProductDetails(result);

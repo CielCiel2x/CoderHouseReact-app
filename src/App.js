@@ -9,7 +9,7 @@ import { CssBaseline } from "@mui/material";
 import ItemDetailContainer from "./components/Item/ItemDetail/ItemDetailContainer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/Homepage/Home";
 
 
 

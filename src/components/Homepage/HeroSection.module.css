@@ -1,0 +1,12 @@
+.hero__container {
+    background-image: url("../../images/heroSection.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroTitle {
+ font-style: italic;
+ font-weight: 700 !important;
+ background-color: rgba(3, 38, 57, .8);
+}
