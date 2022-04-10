@@ -42,7 +42,7 @@ export default function App() {
             <Header cartNumber={cartNumber} />
 
             <Routes>
-            <Route exact path="/home" element={<Home />} />
+              <Route exact path="/home" element={<Home />} />
               <Route exact path="/" element={<Home />} />
               <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
               <Route exact path="/item/:itemId" element={<ItemDetailContainer cartAdd={cartAdd} />} />

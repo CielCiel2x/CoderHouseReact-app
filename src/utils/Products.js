@@ -104,4 +104,4 @@ const product = {
 
 export default Products;
 
-export {product}
+export { product }

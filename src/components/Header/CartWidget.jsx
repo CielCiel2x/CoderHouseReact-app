@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import StyledBadge from "@mui/material/Badge";
 
-export default function CartWidget({cartNumber}) {
+export default function CartWidget({ cartNumber }) {
   return (
     <>
       <div>
