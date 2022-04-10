@@ -29,7 +29,7 @@ export default function ItemCounter({ stock, cartAdd }) {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          minWidth: "80",
+          width: 300
         }}
       >
         <Box

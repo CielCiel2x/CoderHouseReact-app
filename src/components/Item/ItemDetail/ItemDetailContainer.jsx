@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import MyLoader from "../../../utils/MyLoader";
-/* import { product } from "../../../utils/Products"; */
 import Promises from "../Promises";
 import ItemDetail from "./ItemDetail";
 import Products from "../../../utils/Products";
@@ -20,7 +19,7 @@ function ItemDetailContainer({ cartAdd }) {
         setLoading(false)
       })
       .catch("error");
-  }, []);
+  }, [itemId]);
 
   return (
     <>

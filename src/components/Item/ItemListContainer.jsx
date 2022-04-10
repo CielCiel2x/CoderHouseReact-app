@@ -12,16 +12,6 @@ export default function ItemListContainer({ cartAdd }) {
   let [loading, setLoading] = useState(true);
   const {categoryId} = useParams()
 
-  useEffect(() => {
-    Promises(3000, Products)
-      .then((result) => {
-        
-          setItemProduct(result);
-          setLoading(false);
-      })
-      .catch("error");
-  }, []);
-
   useEffect(()=> {
       if(categoryId === "catalog") {
         setLoading(true);

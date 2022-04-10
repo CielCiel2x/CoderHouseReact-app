@@ -10,7 +10,7 @@ export default function UserButton() {
           startIcon={<PersonIcon />}
           variant="contained"
           color="primary"
-          size="large"
+          size= "small"
         >
           Login
         </Button>

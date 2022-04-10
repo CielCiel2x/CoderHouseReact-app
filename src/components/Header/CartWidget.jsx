@@ -13,7 +13,7 @@ export default function CartWidget({ cartNumber }) {
             variant="outlined"
             color="primary"
           >
-            My Cart
+            Cart
           </Button>
         </StyledBadge>
       </div>

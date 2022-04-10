@@ -1,0 +1,22 @@
+.headerbanner {
+    display: block;
+    width: 100vw;
+    font-size: 2.3em;
+    text-align: center;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(11, 184, 155, 1);
+}
+
+@media (max-width: 705px) {
+
+    .headerbanner {
+        font-size: 1.7em;
+    }
+    
+}
+
+.description__card {
+    background-color: rgba(11, 184, 155, .04) !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px  !important;
+}
