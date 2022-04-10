@@ -39,6 +39,12 @@ nav ul li a {
   flex-direction: row;
   gap: 2em;
 }
+@media (max-width: 280px) {
+  .session__container {
+    flex-direction: column;
+  }
+  
+}
 
 .customCard {
   width: 350px;

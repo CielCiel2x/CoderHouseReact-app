@@ -43,7 +43,8 @@ export default function App() {
 
             <Routes>
               <Route exact path="/home" element={<Home />} />
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/CoderHouseReact-app" element={<Home />} />
+              <Route exact path="/" element={<ItemListContainer />} />
               <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
               <Route exact path="/item/:itemId" element={<ItemDetailContainer cartAdd={cartAdd} />} />
 

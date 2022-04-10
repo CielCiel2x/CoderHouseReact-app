@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 export default function Items({ sku, name, price, productImage, stock }) {
   return (
@@ -13,6 +14,7 @@ export default function Items({ sku, name, price, productImage, stock }) {
 
       <Card
         sx={{
+          minWidth: 260,
           width: 350,
           boxShadow: 12,
           margin: 1,
@@ -29,15 +31,21 @@ export default function Items({ sku, name, price, productImage, stock }) {
         />
         <CardMedia component="img" height="300" image={productImage} />
 
-        <Button
-      variant="outlined"
-      color="secondary"
-      sx={{ my: 4, width: "80%", mx: "auto" }}
-    >
-              <Link to={`/item/${sku}`}>
-      View Details
-      </Link>
-    </Button>
+        <Box sx={{display: "flex",
+        justifyContent: "center",
+        mx: "auto"}}>
+          <Link to={`/item/${sku}`}>
+          <Button
+                variant="outlined"
+                color="secondary"
+                sx={{ my: 4}}
+              >
+          
+                View Details
+          
+              </Button>
+              </Link>
+        </Box>
 
       </Card>
     </>
