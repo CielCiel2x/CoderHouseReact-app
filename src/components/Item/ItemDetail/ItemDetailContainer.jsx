@@ -10,7 +10,9 @@ function ItemDetailContainer({ cartAdd }) {
 
   const [productDetails, setProductDetails] = useState({});
   let [loading, setLoading] = useState(true);
-  const {itemId} = useParams()
+  const {itemId} = useParams();
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -27,7 +29,7 @@ function ItemDetailContainer({ cartAdd }) {
       {loading ? (
         <MyLoader loading={loading} />
       ) : (
-        <ItemDetail productDetails={productDetails} cartAdd={cartAdd} />
+        <ItemDetail productDetails={productDetails} cartAdd={cartAdd}/>
       )}
     </>
   );

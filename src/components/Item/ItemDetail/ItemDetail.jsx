@@ -131,15 +131,7 @@ export default function ItemDetail({ productDetails, cartAdd }) {
           <Box className={ItemDetailClasses.headerbanner}>
             <p>Similar products you may also like:</p>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              marginTop: 3,
-            }}
-          >
+          <Box className={ItemDetailClasses.similar__productsContainer}>
             <SimilarProductsContainer productDetails={productDetails} />
           </Box>
         </Box>

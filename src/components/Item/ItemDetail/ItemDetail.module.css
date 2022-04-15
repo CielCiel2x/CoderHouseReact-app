@@ -20,3 +20,10 @@
     background-color: rgba(11, 184, 155, .04) !important;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px  !important;
 }
+
+.similar__productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2em;
+}

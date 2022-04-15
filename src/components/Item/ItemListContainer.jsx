@@ -12,6 +12,8 @@ export default function ItemListContainer({ cartAdd }) {
   let [loading, setLoading] = useState(true);
   const {categoryId} = useParams()
 
+
+
   useEffect(()=> {
       if(categoryId === "catalog") {
         setLoading(true);
@@ -50,7 +52,7 @@ export default function ItemListContainer({ cartAdd }) {
         }}
       >
         {
-        loading ? <MyLoader loading={loading}/> : <ItemList ItemProduct={ItemProduct} cartAdd={cartAdd} />
+        loading ? <MyLoader loading={loading}/> : <ItemList ItemProduct={ItemProduct} cartAdd={cartAdd}/>
       }
       </Box>
     </>
