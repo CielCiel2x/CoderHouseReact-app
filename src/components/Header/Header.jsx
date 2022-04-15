@@ -28,7 +28,7 @@ export default function Header({ cartNumber }) {
   };
 
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar position="sticky" color="secondary">
       <Container maxWidth="xl" sx={{ p: 2 }}>
         <Toolbar disableGutters>
           <HomeLogo />
