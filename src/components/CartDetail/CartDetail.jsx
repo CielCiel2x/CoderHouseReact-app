@@ -16,10 +16,7 @@ function CartDetail() {
     });
     setTotal(total);
   }, [cart]);
-  
 
-
-  console.log(cart);
 
   return (
     <>

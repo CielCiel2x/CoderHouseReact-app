@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import Slide from "@mui/material/Slide";
 
 
 
@@ -14,9 +12,8 @@ import Slide from "@mui/material/Slide";
 
 
 
-export default function ItemCounter({onAdd, wasAdded, checked, productDetails, cart, addToCart }) {
 
-  const [amountProduct, SetAmountToBuy] = useState(0);
+export default function ItemCounter({onAdd, productDetails, cart, addToCart, SetAmountToBuy, amountProduct }) {
 
 
   function addUnit() {
@@ -29,46 +26,7 @@ export default function ItemCounter({onAdd, wasAdded, checked, productDetails, c
 
   return (
     <>
-      {wasAdded ? (
-        <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: 300,
-            }}
-          >
-            <Typography variant="h6">
-              Item added successfully!
-            </Typography>
-            <Box sx={{ width: "100%" }}>
-              <Link to={`/catalog/catalog`}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => onAdd(amountProduct)}
-                  sx={{ width: "100%", marginBottom: 2 }}
-                >
-                  view catalog
-                </Button>
-              </Link>
-            </Box>
-            <Box sx={{ width: "100%" }}>
-              <Button
-                variant="outlined"
-                color="primary"
-                disabled={amountProduct > 0 ? false : true}
-                onClick={() => onAdd(amountProduct)}
-                sx={{ width: "100%" }}
-              >
-                go to cart
-              </Button>
-            </Box>
-          </Box>
-        </Slide>
-      ) : (
+      
         <Box
           sx={{
             display: "flex",
@@ -78,6 +36,7 @@ export default function ItemCounter({onAdd, wasAdded, checked, productDetails, c
             width: 300,
           }}
         >
+          
           <Box
             sx={{
               display: "flex",
@@ -142,17 +101,16 @@ export default function ItemCounter({onAdd, wasAdded, checked, productDetails, c
               disabled={amountProduct > 0 ? false : true}
               onClick={() => {
                 onAdd(amountProduct);
-                console.log(productDetails);
                 addToCart({...productDetails, amountProduct, subtotal: productDetails.price * amountProduct});
-                console.log(cart);
               }}
               sx={{ width: "100%" }}
             >
               Add to cart
             </Button>
           </Box>
+
         </Box>
-      )}
+
     </>
   );
 }

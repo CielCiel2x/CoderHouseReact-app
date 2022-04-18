@@ -1,25 +1,29 @@
-import { Box, Card, Rating, Typography, } from "@mui/material";
+import { Box, Card, Rating, Typography } from "@mui/material";
 import * as React from "react";
-import { useContext } from "react";
-
+import { useContext, useState } from "react";
 import CardHeader from "@mui/material/CardHeader";
-
 import CardContent from "@mui/material/CardContent";
-
 import ItemCounter from "../ItemCounter";
-
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import FastForwardIcon from "@mui/icons-material/FastForward";
 import SimilarProductsContainer from "./SimilarProductsContainer";
-
 import ItemDetailClasses from "./ItemDetail.module.css";
-import {CartContext} from "../../../Contexts/CartContext";
+import { CartContext } from "../../../Contexts/CartContext";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import Slide from "@mui/material/Slide";
 
-
-
-export default function ItemDetail({ productDetails, cartAdd, wasAdded, SetWasAdded, checked, setChecked, onAdd }) {
-
-  const {addToCart, cart} = useContext(CartContext);
+export default function ItemDetail({
+  productDetails,
+  cartAdd,
+  wasAdded,
+  SetWasAdded,
+  checked,
+  setChecked,
+  onAdd,
+}) {
+  const { addToCart, cart } = useContext(CartContext);
+  const [amountProduct, SetAmountToBuy] = useState(0);
 
   return (
     <>
@@ -117,19 +121,64 @@ export default function ItemDetail({ productDetails, cartAdd, wasAdded, SetWasAd
                   {`${productDetails.rating}`} out of 5 stars
                 </Typography>
               </Box>
-              <ItemCounter
-                cartAdd={cartAdd}
-                sx={{ width: "100%" }}
-                wasAdded={wasAdded}
-                setWasAdded={SetWasAdded}
-                checked={checked}
-                setWasChecked={setChecked}
-                onAdd={onAdd}
-                productDetails={productDetails}
-                addToCart={addToCart}
-                cart={cart}
-
-              />
+              {wasAdded ? (
+                <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: 300,
+                    }}
+                  >
+                    <Typography variant="h6">
+                      Item added successfully!
+                    </Typography>
+                    <Box sx={{ width: "100%" }}>
+                      <Link to={`/catalog/catalog`}>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={() => onAdd(amountProduct)}
+                          sx={{ width: "100%", marginBottom: 2 }}
+                        >
+                          view catalog
+                        </Button>
+                      </Link>
+                    </Box>
+                    <Box sx={{ width: "100%" }}>
+                      <Link to={`/cart`}>
+                        <Button
+                          variant="outlined"
+                          color="primary"
+                          disabled={amountProduct > 0 ? false : true}
+                          onClick={() => onAdd(amountProduct)}
+                          sx={{ width: "100%" }}
+                        >
+                          go to cart
+                        </Button>
+                      </Link>
+                    </Box>
+                  </Box>
+                </Slide>
+              ) : (
+                <ItemCounter
+                  cartAdd={cartAdd}
+                  sx={{ width: "100%" }}
+                  wasAdded={wasAdded}
+                  setWasAdded={SetWasAdded}
+                  checked={checked}
+                  setWasChecked={setChecked}
+                  onAdd={onAdd}
+                  productDetails={productDetails}
+                  addToCart={addToCart}
+                  cart={cart}
+                  amountProduct={amountProduct}
+                  SetAmountToBuy={SetAmountToBuy}
+                />
+              )}
+              ;
             </CardContent>
           </Box>
         </Box>
