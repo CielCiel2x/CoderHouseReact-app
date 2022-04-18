@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Promises from "./Promises";
+import Promises from "../../utils/Promises";
 import Products from "../../utils/Products";
 import ItemList from "./ItemList";
 import { Box } from "@mui/material";
@@ -34,7 +34,6 @@ export default function ItemListContainer({ cartAdd }) {
             setLoading(false);
         })
         .catch("error");
-
 
       }
   },[categoryId])

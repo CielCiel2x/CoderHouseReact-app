@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 export const MainTheme = createTheme({
+  
   palette: {
     background: {
       paper: "#f9f6f6",

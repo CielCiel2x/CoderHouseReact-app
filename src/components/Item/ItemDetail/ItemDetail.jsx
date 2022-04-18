@@ -1,5 +1,6 @@
-import { Box, Card, Rating, Typography } from "@mui/material";
+import { Box, Card, Rating, Typography, } from "@mui/material";
 import * as React from "react";
+import { useContext } from "react";
 
 import CardHeader from "@mui/material/CardHeader";
 
@@ -12,8 +13,14 @@ import FastForwardIcon from "@mui/icons-material/FastForward";
 import SimilarProductsContainer from "./SimilarProductsContainer";
 
 import ItemDetailClasses from "./ItemDetail.module.css";
+import {CartContext} from "../../../Contexts/CartContext";
 
-export default function ItemDetail({ productDetails, cartAdd }) {
+
+
+export default function ItemDetail({ productDetails, cartAdd, wasAdded, SetWasAdded, checked, setChecked, onAdd }) {
+
+  const {addToCart, cart} = useContext(CartContext);
+
   return (
     <>
       <Box
@@ -111,9 +118,17 @@ export default function ItemDetail({ productDetails, cartAdd }) {
                 </Typography>
               </Box>
               <ItemCounter
-                stock={productDetails.stock}
                 cartAdd={cartAdd}
                 sx={{ width: "100%" }}
+                wasAdded={wasAdded}
+                setWasAdded={SetWasAdded}
+                checked={checked}
+                setWasChecked={setChecked}
+                onAdd={onAdd}
+                productDetails={productDetails}
+                addToCart={addToCart}
+                cart={cart}
+
               />
             </CardContent>
           </Box>

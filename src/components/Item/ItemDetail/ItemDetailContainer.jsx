@@ -1,22 +1,30 @@
 import React, { useEffect, useState } from "react";
 import MyLoader from "../../../utils/MyLoader";
-import Promises from "../Promises";
+import Promises from "../../../utils/Promises";
 import ItemDetail from "./ItemDetail";
 import Products from "../../../utils/Products";
 import { useParams } from "react-router-dom";
 
 
-function ItemDetailContainer({ cartAdd }) {
+function ItemDetailContainer() {
 
   const [productDetails, setProductDetails] = useState({});
   let [loading, setLoading] = useState(true);
   const {itemId} = useParams();
 
+  const [wasAdded, SetWasAdded] = useState(false);
+
+  const [checked, setChecked] = React.useState(false);
+
+  function onAdd() {
+    SetWasAdded(true);
+    setChecked(true);
+  }
 
 
   useEffect(() => {
     setLoading(true);
-    Promises(3000, Products[itemId - 1])
+    Promises(0, Products[itemId - 1])
       .then((result) => {
         setProductDetails(result);
         setLoading(false)
@@ -29,7 +37,14 @@ function ItemDetailContainer({ cartAdd }) {
       {loading ? (
         <MyLoader loading={loading} />
       ) : (
-        <ItemDetail productDetails={productDetails} cartAdd={cartAdd}/>
+        <ItemDetail
+        productDetails={productDetails}
+        onAdd={onAdd}
+        wasAdded={wasAdded}
+        SetWasAdded={SetWasAdded}
+        checked={checked}
+        setChecked={setChecked}/>
+
       )}
     </>
   );

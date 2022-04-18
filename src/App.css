@@ -66,8 +66,41 @@ width: 350px;
   margin: 0 auto;
 }
 
+.purchaseSummary {
+  font-weight: 700;
+}
 
+.cardImg__container {
+  overflow: hidden;
+  width: 250px;
+  height: 90%;
+  padding: 2em;
+}
 
+.cartProduct__image {
+  height: 100%;
+  object-fit: cover;
+  align-items: center;
+  width: 100%;
+}
 
+.cart-product__units {
+  font-weight: 700;
+}
 
+.cart-product__subtotal {
+  font-style: italic;
+}
 
+.cartItem__card {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 650px) {
+  .cartItem__card {
+    flex-direction: row;
+  }
+}

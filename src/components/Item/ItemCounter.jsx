@@ -11,17 +11,13 @@ import Slide from "@mui/material/Slide";
 
 
 
-export default function ItemCounter({ stock, cartAdd }) {
+
+
+
+export default function ItemCounter({onAdd, wasAdded, checked, productDetails, cart, addToCart }) {
+
   const [amountProduct, SetAmountToBuy] = useState(0);
-  const [wasAdded, SetWasAdded] = useState(false);
 
-  const [checked, setChecked] = React.useState(false);
-
-  function onAdd(buyingAmount) {
-    cartAdd(buyingAmount);
-    SetWasAdded(true);
-    setChecked(true);
-  }
 
   function addUnit() {
     SetAmountToBuy(amountProduct + 1);
@@ -131,7 +127,7 @@ export default function ItemCounter({ stock, cartAdd }) {
                 aria-label="AddIcon"
                 size="small"
                 color="primary"
-                disabled={amountProduct >= stock ? true : false}
+                disabled={amountProduct >= productDetails.stock ? true : false}
                 onClick={addUnit}
               >
                 <AddIcon fontSize="inherit" />
@@ -144,7 +140,12 @@ export default function ItemCounter({ stock, cartAdd }) {
               variant="contained"
               color="secondary"
               disabled={amountProduct > 0 ? false : true}
-              onClick={() => onAdd(amountProduct)}
+              onClick={() => {
+                onAdd(amountProduct);
+                console.log(productDetails);
+                addToCart({...productDetails, amountProduct, subtotal: productDetails.price * amountProduct});
+                console.log(cart);
+              }}
               sx={{ width: "100%" }}
             >
               Add to cart
@@ -155,3 +156,5 @@ export default function ItemCounter({ stock, cartAdd }) {
     </>
   );
 }
+
+/* addToCart(...productDetails, amountProduct) */

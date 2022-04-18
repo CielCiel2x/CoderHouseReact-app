@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "./HeroSection";
-import Promises from "../Item/Promises";
+import Promises from "../../utils/Promises";
 import Products from "../../utils/Products";
 import ItemList from "../Item/ItemList";
 import MyLoader from "../../utils/MyLoader";

@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 const pages = ["catalog", "plushies", "figures", "clothing"];
 
-export default function Header({ cartNumber }) {
+export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -83,7 +83,7 @@ export default function Header({ cartNumber }) {
             ))}
           </Box>
 
-          <SessionBuy cartNumber={cartNumber} />
+          <SessionBuy/>
         </Toolbar>
       </Container>
     </AppBar>
