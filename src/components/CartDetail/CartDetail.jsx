@@ -1,11 +1,12 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Contexts/CartContext";
 import CartProductList from "./CartProductList";
 
+
 function CartDetail() {
-  const { cart, removeFromCart, buyAll } = useContext(CartContext);
+  const { cart, CartCheckout, emptyCart } = useContext(CartContext);
 
   const [total, setTotal] = useState(0);
 
@@ -26,7 +27,7 @@ function CartDetail() {
           flexDirection: { xs: "column", xl: "row" },
           paddingTop: 5,
           alignItems: "flexStart",
-          px: {sm: 0, md: 7, xl:15}
+          px: {sm: 0, md: 7, xl:15},
         }}
       >
         <Box
@@ -38,7 +39,7 @@ function CartDetail() {
             YOUR CART
           </Typography>
 
-          <Box>
+          <Box sx={{display: "flex", flexDirection:{ xs: "row", xl: "column"}, alignItems: "center", flexWrap: "wrap", justifyContent: "center"}}>
               <CartProductList/>
           </Box>
         </Box>
@@ -47,7 +48,6 @@ function CartDetail() {
           sx={{
             border: { xs: 0, md: 2.3 },
             borderColor: { xs: 0, md: "#c9c9c9" },
-            flexGrow: 1,
             display: "flex",
             flexDirection: "column",
             padding: 3,
@@ -86,8 +86,12 @@ function CartDetail() {
                 paddingTop: 2,
               }}
             >
-              total: <span>{total}</span>
+              total: $<span>{total}</span>
             </Typography>
+            <Box sx={{display: "flex", justifyContent: "space-around", marginTop: 3}}>
+              <Button onClick={() => emptyCart()}>empty cart</Button>
+              <Button variant="contained" onClick={() => CartCheckout()}>checkout</Button>
+            </Box>
           </Box>
         </Box>
       </Box>

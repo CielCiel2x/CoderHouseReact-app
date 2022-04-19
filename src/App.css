@@ -72,16 +72,21 @@ width: 350px;
 
 .cardImg__container {
   overflow: hidden;
-  width: 250px;
+  min-width: 150px;
   height: 90%;
   padding: 2em;
+
+  @media (max-width: 540px) {
+    height: 250px;
+  }
 }
 
 .cartProduct__image {
-  height: 100%;
-  object-fit: cover;
-  align-items: center;
-  width: 100%;
+  max-height: 125px;
+  object-fit: contain;
+  max-width: 125px;
+
+
 }
 
 .cart-product__units {
@@ -99,7 +104,7 @@ width: 350px;
   align-items: center;
 }
 
-@media (min-width: 650px) {
+@media (min-width:1536px) {
   .cartItem__card {
     flex-direction: row;
   }

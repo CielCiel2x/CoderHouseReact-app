@@ -18,15 +18,21 @@ const CartContextProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = (id) => {
-    setCart(cart.filter((product) => product.sku !== id));
+  const removeFromCart = (RemoveItem) => {
+    setCart(cart.filter((product) => product.sku !== RemoveItem));
   };
 
-  const buyAll = () => setCart([]);
+  const emptyCart = () => {
+    setCart([]);
+    alert("The cart was emptied")};
+
+  const CartCheckout = () => {
+      setCart([]);
+      alert("Thank you for your purchase!")};
 
   return (
     <>
-      <CartContext.Provider value={{ cart, addToCart, removeFromCart, buyAll }}>
+      <CartContext.Provider value={{ cart, addToCart, removeFromCart, CartCheckout, emptyCart }}>
         {children}
       </CartContext.Provider>
     </>
