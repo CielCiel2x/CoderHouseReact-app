@@ -27,7 +27,11 @@ const CartContextProvider = ({ children }) => {
 
   const CartCheckout = () => {
       setCart([]);
-      alert("Thank you for your purchase!")};
+      if (cart.length === 0) {
+        alert("Your cart is empty")
+      } else { alert("Thank you for your purchase")};
+    }
+
 
   return (
     <>
@@ -37,5 +41,6 @@ const CartContextProvider = ({ children }) => {
     </>
   );
 };
+
 
 export default CartContextProvider;

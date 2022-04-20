@@ -22,7 +22,6 @@ function CartItems({
     <>
       <Card
         className="cartItem__card"
-        key={sku}
         sx={{
           width: { xs: 300, md: 400, xl: "90%" },
           boxShadow: 12,
@@ -31,7 +30,7 @@ function CartItems({
           gap: { xs: 0, md: 3 },
           px: 3,
         }}
-
+        key={sku}
       >
         <Box sx={{flexGrow: 1}}>
           <img src={productImage} className="cartProduct__image"/>
