@@ -3,12 +3,14 @@ import { Box } from "@mui/system";
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Contexts/CartContext";
 import CartProductList from "./CartProductList";
+import EmptyCart from "../../utils/EmptyCart";
 
 
 function CartDetail() {
   const { cart, CartCheckout, emptyCart } = useContext(CartContext);
 
   const [total, setTotal] = useState(0);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let total = 0;
@@ -17,7 +19,6 @@ function CartDetail() {
     });
     setTotal(total);
   }, [cart]);
-
 
   return (
     <>
@@ -40,7 +41,8 @@ function CartDetail() {
           </Typography>
 
           <Box sx={{display: "flex", flexDirection:{ xs: "row", xl: "column"}, alignItems: "center", flexWrap: "wrap", justifyContent: "center"}}>
-              <CartProductList/>
+            {cart.length > 0 ? (<CartProductList/>) : (<EmptyCart/>)}
+              
           </Box>
         </Box>
 

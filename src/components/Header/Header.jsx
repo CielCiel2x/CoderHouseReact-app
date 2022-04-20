@@ -62,11 +62,11 @@ export default function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link to={`/catalog/${page}`}>
+                <Link to={`/catalog/${page}`}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
-                  </Link>
-                </MenuItem>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -83,7 +83,7 @@ export default function Header() {
             ))}
           </Box>
 
-          <SessionBuy/>
+          <SessionBuy />
         </Toolbar>
       </Container>
     </AppBar>

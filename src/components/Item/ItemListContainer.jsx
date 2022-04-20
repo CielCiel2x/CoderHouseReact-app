@@ -15,7 +15,8 @@ export default function ItemListContainer({ cartAdd }) {
 
 
   useEffect(()=> {
-      if(categoryId === "catalog") {
+      if((categoryId == "catalog") || (categoryId== undefined)) {
+        console.log(categoryId);
         setLoading(true);
         Promises(3000, Products)
         .then((result) => {

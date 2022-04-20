@@ -3,12 +3,12 @@ import React, { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
+  
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
 
     const indexOfProduct = cart.findIndex((item) => product.sku === item.sku);
-    console.log(indexOfProduct);
     if (indexOfProduct !== -1) {
       const newCart = [...cart];
       newCart[indexOfProduct].amountProduct += product.amountProduct;

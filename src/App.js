@@ -16,6 +16,7 @@ import CartDetail from "./components/CartDetail/CartDetail";
 
 
 
+
 export default function App() {
 
 
@@ -32,12 +33,15 @@ export default function App() {
                 <Route exact path="/CoderHouseReact-app" element={<Home />} />
                 <Route exact path="/" element={<ItemListContainer />} />
                 <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
+                <Route exact path="/catalog/" element={<ItemListContainer />} />
                 <Route exact path="/item/:itemId" element={<ItemDetailContainer />} />
                 <Route exact path="/cart" element={<CartDetail />} />
 
               </Routes>
 
             </BrowserRouter>
+
+ 
 
 
           </CssBaseline>
