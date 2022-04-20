@@ -29,6 +29,7 @@ export default function ItemDetail({
     <>
       <Box
         sx={{
+          marginTop: 5,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

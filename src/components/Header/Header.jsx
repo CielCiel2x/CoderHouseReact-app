@@ -62,8 +62,8 @@ export default function Header() {
               }}
             >
               {pages.map((page) => (
-                <Link to={`/catalog/${page}`}>
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <Link to={`/catalog/${page}`} key={page}>
+                  <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 </Link>
@@ -73,13 +73,14 @@ export default function Header() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, px: 4 }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "primary", display: "block", mx: 3 }}
-              >
-                <Link to={`/catalog/${page}`}>{page}</Link>
-              </Button>
+              <Link to={`/catalog/${page}`} key={page}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "primary", display: "block", mx: 3 }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 

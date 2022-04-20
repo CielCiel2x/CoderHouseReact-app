@@ -8,11 +8,14 @@ import {CartContext} from "../../Contexts/CartContext";
 export default function CartWidget() {
 
   const {cart} = useContext(CartContext);
+const cartNumber = cart.reduce((acc, object) => {
+  return acc + object.amountProduct;
+},0);
 
   return (
     <>
       <div>
-        <StyledBadge badgeContent={cart.length} color="primary">
+        <StyledBadge badgeContent={cartNumber} color="primary">
         <Link to="/cart">
           <Button
             startIcon={<ShoppingCartIcon />}

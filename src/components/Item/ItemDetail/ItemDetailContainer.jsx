@@ -24,7 +24,7 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     setLoading(true);
-    Promises(0, Products[itemId - 1])
+    Promises(2000, Products[itemId - 1])
       .then((result) => {
         setProductDetails(result);
         setLoading(false)

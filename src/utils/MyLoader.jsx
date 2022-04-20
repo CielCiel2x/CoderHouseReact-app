@@ -9,7 +9,7 @@ const override = css`
 
 function MyLoader({ loading }) {
   return (
-    <PuffLoader color="#0bb89b" loading={loading} css={override} size={100} />
+    <PuffLoader color="#0bb89b" loading={loading} css={override} size={75} />
   );
 }
 
