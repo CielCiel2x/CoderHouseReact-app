@@ -34,8 +34,8 @@ function ItemDetailContainer() {
     setLoading(true);
     getDoc(itemDataBase).then((res) => {
       setProductDetails({ sku: res.id, ...res.data() });
+      setLoading(false);
     });
-    setLoading(false);
   }, [itemId]);
 
   return (

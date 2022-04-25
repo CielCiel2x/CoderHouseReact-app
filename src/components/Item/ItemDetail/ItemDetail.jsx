@@ -29,7 +29,7 @@ export default function ItemDetail({
 
   useEffect(() => {
     setRating(productDetails.rating);
-  }, [productDetails.rating]);
+  }, []);
 
   return (
     <>
