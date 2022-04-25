@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/CoderHouseReact-app/static/css/main.b7a07afa.css",
-    "main.js": "/CoderHouseReact-app/static/js/main.c7aa5abe.js",
+    "main.css": "/CoderHouseReact-app/static/css/main.4e98fb09.css",
+    "main.js": "/CoderHouseReact-app/static/js/main.499d36f2.js",
     "static/js/787.c285b863.chunk.js": "/CoderHouseReact-app/static/js/787.c285b863.chunk.js",
     "static/media/heroSection.png": "/CoderHouseReact-app/static/media/heroSection.ce1929c4a461a7ce0efe.png",
     "static/media/logo.png": "/CoderHouseReact-app/static/media/logo.787619e145016bc90e42.png",
+    "static/media/empty-cart.svg": "/CoderHouseReact-app/static/media/empty-cart.85e49fe3d6d9aa2df011c1408162bb6e.svg",
     "index.html": "/CoderHouseReact-app/index.html",
-    "main.b7a07afa.css.map": "/CoderHouseReact-app/static/css/main.b7a07afa.css.map",
-    "main.c7aa5abe.js.map": "/CoderHouseReact-app/static/js/main.c7aa5abe.js.map",
+    "main.4e98fb09.css.map": "/CoderHouseReact-app/static/css/main.4e98fb09.css.map",
+    "main.499d36f2.js.map": "/CoderHouseReact-app/static/js/main.499d36f2.js.map",
     "787.c285b863.chunk.js.map": "/CoderHouseReact-app/static/js/787.c285b863.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7a07afa.css",
-    "static/js/main.c7aa5abe.js"
+    "static/css/main.4e98fb09.css",
+    "static/js/main.499d36f2.js"
   ]
 }
