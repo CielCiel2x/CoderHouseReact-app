@@ -30,7 +30,6 @@ function SimilarProductsContainer({productDetails}) {
         );
       });
       setLoading(false);
-      console.log(ProductsAlternatives)
     },[productDetails])
 
 
