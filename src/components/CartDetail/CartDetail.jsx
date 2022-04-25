@@ -10,7 +10,6 @@ function CartDetail() {
   const { cart, CartCheckout, emptyCart } = useContext(CartContext);
 
   const [total, setTotal] = useState(0);
-  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let total = 0;

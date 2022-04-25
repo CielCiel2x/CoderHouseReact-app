@@ -4,6 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA1436dvVTfRGo9v8oyLn9_G5R-gEbazYI",
+  authDomain: "susu-storechr.firebaseapp.com",
+  projectId: "susu-storechr",
+  storageBucket: "susu-storechr.appspot.com",
+  messagingSenderId: "588528544833",
+  appId: "1:588528544833:web:9429f72dea9f1e410eaac0"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

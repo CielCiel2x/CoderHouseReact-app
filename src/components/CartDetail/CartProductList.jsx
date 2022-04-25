@@ -19,6 +19,7 @@ function CartProductList() {
           stock={product.stock}
           amountProduct={product.amountProduct}
           removeFromCart = {removeFromCart}
+          category = {product.category}
         />
       </>
     ));

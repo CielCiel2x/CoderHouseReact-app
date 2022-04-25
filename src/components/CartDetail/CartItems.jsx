@@ -17,6 +17,7 @@ function CartItems({
   productImage,
   amountProduct,
   removeFromCart,
+  category,
 }) {
   return (
     <>
@@ -76,7 +77,7 @@ function CartItems({
             
           }}
         >
-          <Link to={`/item/${sku}`}>
+          <Link to={`/${category}/item/${sku}`}>
             <Button variant="outlined" color="secondary" sx={{ my: 4 }}>
               View product
             </Button>

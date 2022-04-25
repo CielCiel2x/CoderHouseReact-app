@@ -1,7 +1,7 @@
 import React from "react";
 import Items from "../Items";
 
-export default function ItemList({ ProductsAlternatives }) {
+export default function ItemList({ ProductsAlternatives, category }) {
   return ProductsAlternatives.map((product) => (
     <Items
       sku={product.sku}
@@ -10,6 +10,7 @@ export default function ItemList({ ProductsAlternatives }) {
       price={product.price}
       productImage={product.productImage}
       stock={product.stock}
+      category={category}
     />
   ));
 }

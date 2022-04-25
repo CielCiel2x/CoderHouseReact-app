@@ -1,6 +1,6 @@
 import { Box, Card, Rating, Typography } from "@mui/material";
 import * as React from "react";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import ItemCounter from "../ItemCounter";
@@ -21,9 +21,15 @@ export default function ItemDetail({
   checked,
   setChecked,
   onAdd,
+  rating,
+  setRating,
 }) {
   const { addToCart, cart } = useContext(CartContext);
   const [amountProduct, SetAmountToBuy] = useState(0);
+
+  useEffect(() => {
+    setRating(productDetails.rating);
+  }, [productDetails.rating]);
 
   return (
     <>
@@ -115,11 +121,11 @@ export default function ItemDetail({
                 </Typography>
                 <Rating
                   name="read-only"
-                  value={productDetails.rating}
+                  value={rating}
                   readOnly
                 />
                 <Typography variant="caption">
-                  {`${productDetails.rating}`} out of 5 stars
+                  {`${rating}`} out of 5 stars
                 </Typography>
               </Box>
               {wasAdded ? (
@@ -197,7 +203,7 @@ export default function ItemDetail({
             <p>Similar products you may also like:</p>
           </Box>
           <Box className={ItemDetailClasses.similar__productsContainer}>
-            <SimilarProductsContainer productDetails={productDetails} />
+            {<SimilarProductsContainer/>}
           </Box>
         </Box>
       </Box>

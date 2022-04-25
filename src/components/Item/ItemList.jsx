@@ -10,6 +10,7 @@ export default function ItemList({ ItemProduct }) {
       price={product.price}
       productImage={product.productImage}
       stock={product.stock}
+      category={product.category}
     />
   ));
 }

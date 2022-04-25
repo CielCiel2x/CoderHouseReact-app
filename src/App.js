@@ -13,6 +13,9 @@ import Home from "./components/Homepage/Home";
 import CartContextProvider from "./Contexts/CartContext";
 import CartDetail from "./components/CartDetail/CartDetail";
 
+import ScrollToTop from "./utils/ScrollToTop";
+
+
 
 
 
@@ -27,17 +30,18 @@ export default function App() {
           <CssBaseline>
             <BrowserRouter>
               <Header />
-
+              <ScrollToTop>
               <Routes>
                 <Route exact path="/home" element={<Home />} />
                 <Route exact path="/CoderHouseReact-app" element={<Home />} />
                 <Route exact path="/" element={<ItemListContainer />} />
                 <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
                 <Route exact path="/catalog/" element={<ItemListContainer />} />
-                <Route exact path="/item/:itemId" element={<ItemDetailContainer />} />
+                <Route exact path="/:category/item/:itemId" element={<ItemDetailContainer />} />
                 <Route exact path="/cart" element={<CartDetail />} />
 
               </Routes>
+              </ScrollToTop>
 
             </BrowserRouter>
 

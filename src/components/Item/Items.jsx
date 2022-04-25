@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 
-export default function Items({ sku, name, price, productImage, stock }) {
+export default function Items({ sku, name, price, productImage, stock, category }) {
   return (
     <>
 
@@ -34,7 +34,7 @@ export default function Items({ sku, name, price, productImage, stock }) {
         <Box sx={{display: "flex",
         justifyContent: "center",
         mx: "auto"}}>
-          <Link to={`/item/${sku}`}>
+          <Link to={`/${category}/item/${sku}`}>
           <Button
                 variant="outlined"
                 color="secondary"
