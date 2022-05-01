@@ -4,9 +4,9 @@ export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [purchaseId, setPurchaseId] = useState("");
 
   const addToCart = (product) => {
-
     const indexOfProduct = cart.findIndex((item) => product.sku === item.sku);
     if (indexOfProduct !== -1) {
       const newCart = [...cart];
@@ -23,24 +23,26 @@ const CartContextProvider = ({ children }) => {
 
   const emptyCart = () => {
     setCart([]);
-    alert("The cart was emptied")};
-
-  const CartCheckout = () => {
-      setCart([]);
-      if (cart.length === 0) {
-        alert("Your cart is empty")
-      } else { alert("Thank you for your purchase")};
-    }
-
+    alert("The cart was emptied");
+  };
 
   return (
     <>
-      <CartContext.Provider value={{ cart, addToCart, removeFromCart, CartCheckout, emptyCart }}>
+      <CartContext.Provider
+        value={{
+          cart,
+          addToCart,
+          removeFromCart,
+          emptyCart,
+          purchaseId,
+          setPurchaseId,
+          setCart,
+        }}
+      >
         {children}
       </CartContext.Provider>
     </>
   );
 };
-
 
 export default CartContextProvider;

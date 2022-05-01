@@ -14,6 +14,7 @@ import CartContextProvider from "./Contexts/CartContext";
 import CartDetail from "./components/CartDetail/CartDetail";
 
 import ScrollToTop from "./utils/ScrollToTop";
+import ApprovedPurchase from "./components/CartDetail/OrderForm/ApprovedPurchase";
 
 
 
@@ -31,26 +32,25 @@ export default function App() {
             <BrowserRouter>
               <Header />
               <ScrollToTop>
-              <Routes>
-                <Route exact path="/home" element={<Home />} />
-                <Route exact path="/CoderHouseReact-app" element={<Home />} />
-                <Route exact path="/" element={<ItemListContainer />} />
-                <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
-                <Route exact path="/catalog/" element={<ItemListContainer />} />
-                <Route exact path="/:category/item/:itemId" element={<ItemDetailContainer />} />
-                <Route exact path="/cart" element={<CartDetail />} />
+                <Routes>
+                  <Route exact path="/home" element={<Home />} />
+                  <Route exact path="/CoderHouseReact-app" element={<Home />} />
+                  <Route exact path="/" element={<ItemListContainer />} />
+                  <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
+                  <Route exact path="/catalog/" element={<ItemListContainer />} />
+                  <Route exact path="/:category/item/:itemId" element={<ItemDetailContainer />} />
+                  <Route exact path="/cart" element={<CartDetail />} />
+                  <Route exact path="/approvedpurchase" element={<ApprovedPurchase />} />
 
-              </Routes>
+                </Routes>
               </ScrollToTop>
-
             </BrowserRouter>
-
- 
 
 
           </CssBaseline>
         </ThemeProvider>
       </CartContextProvider>
+
     </>
   );
 }
