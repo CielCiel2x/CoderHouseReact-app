@@ -34,8 +34,7 @@ export default function App() {
               <ScrollToTop>
                 <Routes>
                   <Route exact path="/home" element={<Home />} />
-                  <Route exact path="/CoderHouseReact-app" element={<Home />} />
-                  <Route exact path="/" element={<ItemListContainer />} />
+                  <Route exact path="/" element={<Home />} />
                   <Route exact path="/catalog/:categoryId/" element={<ItemListContainer />} />
                   <Route exact path="/catalog/" element={<ItemListContainer />} />
                   <Route exact path="/:category/item/:itemId" element={<ItemDetailContainer />} />
