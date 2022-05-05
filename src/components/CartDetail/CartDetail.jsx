@@ -9,7 +9,7 @@ import OrderFormContainer from "./OrderForm/OrderFormContainer";
 import Modal from "@mui/material/Modal";
 
 function CartDetail() {
-  const { cart, emptyCart } = useContext(CartContext);
+  const { cart, emptyCart, removeFromCart } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
 
   const [open, setOpen] = React.useState(false);
@@ -79,7 +79,7 @@ function CartDetail() {
               justifyContent: "center",
             }}
           >
-            {cart.length > 0 ? <CartProductList /> : <EmptyCart />}
+            {cart.length > 0 ? <CartProductList cart={cart} removeFromCart={removeFromCart} /> : <EmptyCart />}
           </Box>
         </Box>
 

@@ -1,15 +1,9 @@
 
-import React, { useContext } from 'react'
-import { CartContext } from "../../Contexts/CartContext";
-
-
-
+import React from 'react'
 import CartItems from './CartItems';
 
-function CartProductList() {
-  const { cart, removeFromCart } = useContext(CartContext);
+function CartProductList({cart, removeFromCart}) {
     return cart.map((product) => (
-      <>
         <CartItems
           sku={product.sku}
           key={product.sku}
@@ -21,7 +15,6 @@ function CartProductList() {
           removeFromCart = {removeFromCart}
           category = {product.category}
         />
-      </>
     ));
   
 }

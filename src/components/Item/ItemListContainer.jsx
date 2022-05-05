@@ -17,10 +17,11 @@ export default function ItemListContainer({ cartAdd }) {
   let [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
 
-  const dataBase = getFirestore();
-  const productsColl = collection(dataBase, "products");
 
    useEffect(() => {
+     
+  const dataBase = getFirestore();
+  const productsColl = collection(dataBase, "products");
     if (categoryId === "catalog" || categoryId === undefined) {
       setLoading(true);
       getDocs(productsColl).then((res) => {

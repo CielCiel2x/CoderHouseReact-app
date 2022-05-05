@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "./HeroSection";
-import Promises from "../../utils/Promises";
-import Products from "../../utils/Products";
 import ItemList from "../Item/ItemList";
 import MyLoader from "../../utils/MyLoader";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+
 function Home() {
   const [ItemProduct, setItemProduct] = useState([]);
   let [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    Promises(3000, Products)
-      .then((result) => {
-        setItemProduct(result.filter(obj => obj.rating === 5));
+   useEffect(() => {
+    const dataBase = getFirestore();
+    const productsColl = collection(dataBase, "products");
+      const q = query(productsColl, where("rating", ">=", 4));
+      setLoading(true);
+      getDocs(q).then((res) => {
+        setItemProduct(
+          res.docs.map((item) => ({ sku: item.id, ...item.data() }))
+        );
         setLoading(false);
-      })
-      .catch("error");
+      });
   }, []);
 
   return (
     <>
       <HeroSection />
 
-      <Typography variant="h3" sx={{textAlign: "center"}}>
+      <Typography variant="h3" sx={{textAlign: "center", marginTop: 3}}>
           OUR RECOMMENDATIONS
         </Typography>
 

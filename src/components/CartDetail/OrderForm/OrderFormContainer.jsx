@@ -5,6 +5,7 @@ import {
   collection,
   getFirestore,
   addDoc,
+  serverTimestamp
 } from "firebase/firestore";
 import { CartContext } from "../../../Contexts/CartContext";
 
@@ -29,6 +30,7 @@ function OrderFormContainer(totalPrice) {
     buyer: { name, email, contactPhone, shippingAddress },
     items: [...cart],
     total: { totalPrice },
+    date: serverTimestamp(),
   };
 
   function confirmPurchase() {
