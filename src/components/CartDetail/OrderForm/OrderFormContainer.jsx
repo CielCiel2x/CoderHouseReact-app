@@ -5,7 +5,10 @@ import {
   collection,
   getFirestore,
   addDoc,
+  writeBatch,
   serverTimestamp,
+  getDoc,
+  doc,
 } from "firebase/firestore";
 import { CartContext } from "../../../Contexts/CartContext";
 
@@ -34,10 +37,26 @@ function OrderFormContainer(totalPrice) {
   };
 
   function confirmPurchase() {
+    const batch = writeBatch(dataBase);
+
+    cart.forEach((item) => {
+      let productDoc = doc(dataBase, "products", String(item.sku));
+      let previousStock = 0;
+
+      getDoc(productDoc).then((snapshot) => {
+        if (snapshot.exists()) {
+          if (snapshot.data().stock) {
+            previousStock = Number(snapshot.data().stock);
+          }
+        }
+        let newStock = previousStock - item.amountProduct;
+        batch.update(productDoc, { stock: newStock });
+      });
+    });
     addDoc(soldTickets, buyerTicket).then(({ id }) => {
+      batch.commit();
       setPurchaseId(id);
       setCart([]);
-      console.log(id);
     });
   }
 
