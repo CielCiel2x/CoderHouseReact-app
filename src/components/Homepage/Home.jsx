@@ -34,7 +34,7 @@ function Home() {
     <>
       <HeroSection />
 
-      <Typography variant="h3" sx={{textAlign: "center", marginTop: 3}}>
+      <Typography variant="h4" sx={{textAlign: "center", marginTop: 3}}>
           OUR RECOMMENDATIONS
         </Typography>
 
