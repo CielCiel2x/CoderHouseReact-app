@@ -13,6 +13,9 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import Slide from "@mui/material/Slide";
 
+import Lottie from "lottie-react";
+import SuccessPurchase from "../../../images/SuccessPurchase.json";
+
 export default function ItemDetail({
   productDetails,
   cartAdd,
@@ -24,6 +27,15 @@ export default function ItemDetail({
   rating,
   setRating,
 }) {
+  const animationOptions = {
+    animationData: SuccessPurchase,
+    autoplay: true,
+    loop: false,
+    style: {
+      width: "25vw",
+    },
+  };
+
   const { addToCart, cart } = useContext(CartContext);
   const [amountProduct, SetAmountToBuy] = useState(0);
 
@@ -54,11 +66,15 @@ export default function ItemDetail({
         >
           {/* G A L E R I A */}
           <Box>
-            <img
-              src={productDetails.productImage}
-              className="product__image"
-              alt="#"
-            />
+            {wasAdded ? (
+              <Lottie {...animationOptions} />
+            ) : (
+              <img
+                src={productDetails.productImage}
+                className="product__image"
+                alt="#"
+              />
+            )}
           </Box>
           {/* D A T O S   D E   P R O D U C T O */}
           <Box
@@ -119,11 +135,7 @@ export default function ItemDetail({
                 <Typography variant="h5" component="legend">
                   Product's rating:
                 </Typography>
-                <Rating
-                  name="read-only"
-                  value={rating}
-                  readOnly
-                />
+                <Rating name="read-only" value={rating} readOnly />
                 <Typography variant="caption">
                   {`${rating}`} out of 5 stars
                 </Typography>
@@ -203,7 +215,7 @@ export default function ItemDetail({
             <p>Similar products you may also like:</p>
           </Box>
           <Box className={ItemDetailClasses.similar__productsContainer}>
-            {<SimilarProductsContainer/>}
+            {<SimilarProductsContainer />}
           </Box>
         </Box>
       </Box>

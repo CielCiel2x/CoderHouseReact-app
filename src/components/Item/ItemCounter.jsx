@@ -13,7 +13,7 @@ import { Button } from "@mui/material";
 
 
 
-export default function ItemCounter({onAdd, productDetails, cart, addToCart, SetAmountToBuy, amountProduct }) {
+export default function ItemCounter({onAdd, productDetails, addToCart, SetAmountToBuy, amountProduct, setWasAdded }) {
 
 
   function addUnit() {
@@ -102,6 +102,7 @@ export default function ItemCounter({onAdd, productDetails, cart, addToCart, Set
               onClick={() => {
                 onAdd(amountProduct);
                 addToCart({...productDetails, amountProduct, subtotal: productDetails.price * amountProduct});
+                setWasAdded(true);
               }}
               sx={{ width: "100%" }}
             >

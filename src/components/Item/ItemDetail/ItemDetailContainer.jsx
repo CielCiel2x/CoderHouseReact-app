@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MyLoader from "../../../utils/MyLoader";
-import Promises from "../../../utils/Promises";
 import ItemDetail from "./ItemDetail";
-import Products from "../../../utils/Products";
 import { useParams } from "react-router-dom";
 
 import {
