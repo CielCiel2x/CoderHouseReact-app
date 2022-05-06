@@ -32,7 +32,7 @@ export default function ItemDetail({
     autoplay: true,
     loop: false,
     style: {
-      width: "25vw",
+      width: "350px",
     },
   };
 
