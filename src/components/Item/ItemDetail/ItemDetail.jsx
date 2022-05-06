@@ -27,6 +27,9 @@ export default function ItemDetail({
   rating,
   setRating,
 }) {
+  const { addToCart, cart } = useContext(CartContext);
+  const [amountProduct, SetAmountToBuy] = useState(0);
+
   const animationOptions = {
     animationData: SuccessPurchase,
     autoplay: true,
@@ -35,9 +38,6 @@ export default function ItemDetail({
       width: "350px",
     },
   };
-
-  const { addToCart, cart } = useContext(CartContext);
-  const [amountProduct, SetAmountToBuy] = useState(0);
 
   useEffect(() => {
     setRating(productDetails.rating);

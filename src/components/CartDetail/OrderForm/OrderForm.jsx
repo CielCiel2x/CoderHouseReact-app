@@ -20,7 +20,12 @@ function OrderForm({
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: {xs: "25ch", sm:"50ch"}, display:"flex", justifyContent: "center" },
+          "& > :not(style)": {
+            m: 1,
+            width: { xs: "25ch", sm: "50ch" },
+            display: "flex",
+            justifyContent: "center",
+          },
         }}
         autoComplete="off"
       >

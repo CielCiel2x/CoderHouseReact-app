@@ -39,12 +39,9 @@ function ApprovedPurchase() {
             {purchaseId}
           </Typography>
           <Link to={`/home`}>
-            <Button
-            variant="text"
-            sx={{ marginTop: 3, fontSize: "1.5rem" }}
-                    >
-            Return to homepage
-                    </Button>
+            <Button variant="text" sx={{ marginTop: 3, fontSize: "1.5rem" }}>
+              Return to homepage
+            </Button>
           </Link>
         </Box>
       )}

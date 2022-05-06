@@ -5,7 +5,6 @@ import EmptyCartState from "../images/empty-cart.svg";
 
 function EmptyCart() {
   return (
-
     <>
       <Box
         sx={{
@@ -26,18 +25,18 @@ function EmptyCart() {
         </Typography>
 
         <Link to="/catalog/">
-        <Button
-          variant="contained"
-          color="primary"
-          sx={{
-            marginTop: 2,
-            width: 250,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          return to the catalog
-        </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              marginTop: 2,
+              width: 250,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            return to the catalog
+          </Button>
         </Link>
       </Box>
     </>

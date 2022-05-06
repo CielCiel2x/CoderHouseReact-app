@@ -17,26 +17,26 @@ function Home() {
   const [ItemProduct, setItemProduct] = useState([]);
   let [loading, setLoading] = useState(true);
 
-   useEffect(() => {
+  useEffect(() => {
     const dataBase = getFirestore();
     const productsColl = collection(dataBase, "products");
-      const q = query(productsColl, where("rating", ">=", 4));
-      setLoading(true);
-      getDocs(q).then((res) => {
-        setItemProduct(
-          res.docs.map((item) => ({ sku: item.id, ...item.data() }))
-        );
-        setLoading(false);
-      });
+    const q = query(productsColl, where("rating", ">=", 4));
+    setLoading(true);
+    getDocs(q).then((res) => {
+      setItemProduct(
+        res.docs.map((item) => ({ sku: item.id, ...item.data() }))
+      );
+      setLoading(false);
+    });
   }, []);
 
   return (
     <>
       <HeroSection />
 
-      <Typography variant="h4" sx={{textAlign: "center", marginTop: 3}}>
-          OUR RECOMMENDATIONS
-        </Typography>
+      <Typography variant="h4" sx={{ textAlign: "center", marginTop: 3 }}>
+        OUR RECOMMENDATIONS
+      </Typography>
 
       <Box
         sx={{
@@ -48,7 +48,6 @@ function Home() {
           margin: 3,
         }}
       >
-
         {loading ? <MyLoader /> : <ItemList ItemProduct={ItemProduct} />}
       </Box>
     </>

@@ -3,11 +3,7 @@ import MyLoader from "../../../utils/MyLoader";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
-import {
-  doc,
-  getDoc,
-  getFirestore,
-} from "firebase/firestore";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 function ItemDetailContainer() {
   const [productDetails, setProductDetails] = useState({});
@@ -42,8 +38,8 @@ function ItemDetailContainer() {
         <MyLoader loading={loading} />
       ) : (
         <ItemDetail
-        rating={rating}
-        setRating={setRating}
+          rating={rating}
+          setRating={setRating}
           productDetails={productDetails}
           onAdd={onAdd}
           wasAdded={wasAdded}

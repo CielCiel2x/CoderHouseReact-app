@@ -32,7 +32,7 @@ export default function Header() {
       <Container maxWidth="xl" sx={{ p: 2 }}>
         <Toolbar disableGutters>
           <HomeLogo />
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"

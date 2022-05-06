@@ -33,8 +33,8 @@ function CartItems({
         }}
         key={sku}
       >
-        <Box sx={{flexGrow: 1}}>
-          <img src={productImage} className="cartProduct__image"/>
+        <Box sx={{ flexGrow: 1 }}>
+          <img src={productImage} className="cartProduct__image" />
         </Box>
 
         <CardHeader
@@ -42,7 +42,7 @@ function CartItems({
           subheader={`price: $${price} | units: ${amountProduct}`}
           sx={{
             width: { sm: "100%", md: "70%", xl: "100%" },
-            flexGrow: 1
+            flexGrow: 1,
           }}
         />
 
@@ -55,7 +55,6 @@ function CartItems({
             alignSelf: { xs: "start", xl: "center" },
             gap: { xs: 2, md: 1 },
             width: { sm: "100%", md: "70%", xl: "70%" },
-
           }}
         >
           <Typography
@@ -74,7 +73,6 @@ function CartItems({
             mx: "auto",
             px: 5,
             gap: 2,
-            
           }}
         >
           <Link to={`/${category}/item/${sku}`}>

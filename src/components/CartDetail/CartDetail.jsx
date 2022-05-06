@@ -79,7 +79,11 @@ function CartDetail() {
               justifyContent: "center",
             }}
           >
-            {cart.length > 0 ? <CartProductList cart={cart} removeFromCart={removeFromCart} /> : <EmptyCart />}
+            {cart.length > 0 ? (
+              <CartProductList cart={cart} removeFromCart={removeFromCart} />
+            ) : (
+              <EmptyCart />
+            )}
           </Box>
         </Box>
 

@@ -5,7 +5,7 @@ import {
   collection,
   getFirestore,
   addDoc,
-  serverTimestamp
+  serverTimestamp,
 } from "firebase/firestore";
 import { CartContext } from "../../../Contexts/CartContext";
 
