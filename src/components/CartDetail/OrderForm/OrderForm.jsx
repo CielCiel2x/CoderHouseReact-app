@@ -66,7 +66,7 @@ function OrderForm({
           }}
         />
       </Box>
-      <Link to="/approvedpurchase">
+      <Link to="/approvedpurchase" className={isFormValid ? "disabledLink" : "#"}>
         <Button
           disabled={isFormValid}
           variant="contained"

@@ -109,3 +109,7 @@ width: 350px;
     flex-direction: row;
   }
 }
+
+.disabledLink {
+  pointer-events: none;
+}

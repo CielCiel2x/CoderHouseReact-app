@@ -25,6 +25,9 @@ export default function ItemCounter({
   }
 
 
+
+
+  // C H E C K   C A R T   A M O U N T   +   N E W   I N T E N D E D   A M O U N T
   const [isOverStock, setIsOverStock] = useState(false);
 
 
@@ -39,11 +42,6 @@ setIsOverStock(false);
   }
 
 }, [amountProduct]) 
-
-
-
-
-
 
 
 

@@ -99,7 +99,7 @@ function OrderFormContainer(totalPrice) {
   }, [name]);
 
   useEffect(
-    (isAddressValid, isMailValid, isNameValid, isPhoneValid) => {
+    () => {
       if (
         !isNameValid &&
         !isAddressValid &&
