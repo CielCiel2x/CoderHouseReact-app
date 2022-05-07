@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect, useContext, useState} from "react";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
+import CartContext from "../../Contexts/CartContext";
 
 export default function ItemCounter({
   onAdd,
@@ -13,6 +14,7 @@ export default function ItemCounter({
   SetAmountToBuy,
   amountProduct,
   setWasAdded,
+  cart
 }) {
   function addUnit() {
     SetAmountToBuy(amountProduct + 1);
@@ -21,6 +23,31 @@ export default function ItemCounter({
   function minusUnit() {
     SetAmountToBuy(amountProduct - 1);
   }
+
+
+  const [isOverStock, setIsOverStock] = useState(false);
+
+
+ useEffect(() => {
+
+  const indexOfProduct = cart.findIndex((item) => item.sku === productDetails.sku);
+
+  if (indexOfProduct == -1) {
+setIsOverStock(false);
+  } else {
+    (cart[indexOfProduct].amountProduct + amountProduct > productDetails.stock) ? setIsOverStock(true) : setIsOverStock(false);
+  }
+
+}, [amountProduct]) 
+
+
+
+
+
+
+
+
+
 
   return (
     <>
@@ -82,7 +109,7 @@ export default function ItemCounter({
               aria-label="AddIcon"
               size="small"
               color="primary"
-              disabled={amountProduct >= productDetails.stock ? true : false}
+              disabled={((amountProduct >= productDetails.stock) || (isOverStock)) ? true : false}
               onClick={addUnit}
             >
               <AddIcon fontSize="inherit" />
@@ -94,7 +121,7 @@ export default function ItemCounter({
           <Button
             variant="contained"
             color="secondary"
-            disabled={amountProduct > 0 ? false : true}
+            disabled={((amountProduct > 0)&&(!isOverStock)) ? false : true}
             onClick={() => {
               onAdd(amountProduct);
               addToCart({
